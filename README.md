@@ -6,7 +6,7 @@
 
 
 
-# Code will be released before April 20. 
+# Code will be released by the end of April 2022. 
 
 <hr />
 
@@ -31,7 +31,7 @@ including defocus deblurring, image denoising, super-resolution, and image enhan
 If you use MIRNet_v2, please consider citing:
 
     @article{Zamir2022MIRNetv2,
-        title={Restormer: Efficient Transformer for High-Resolution Image Restoration}, 
+        title={Learning Enriched Features for Fast Image Restoration and Enhancement}, 
         author={Syed Waqas Zamir and Aditya Arora and Salman Khan and Munawar Hayat 
                 and Fahad Shahbaz Khan, Ming-Hsuan Yang, and Ling Shao},
         journal={IEEE Transactions on Pattern Analysis and Machine Intelligence (TPAMI)},
