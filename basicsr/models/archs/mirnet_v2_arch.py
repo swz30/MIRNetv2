@@ -183,21 +183,6 @@ class UpSample(nn.Module):
         x = self.body(x)
         return x
 
-class Upsampler(nn.Sequential):
-    def __init__(self, n_feat, scale, bias=False):
-
-        m = []
-        if (scale & (scale - 1)) == 0:    # Is scale = 2^n?
-            for _ in range(int(math.log(scale, 2))):
-                m.append(nn.Conv2d(n_feat, 4 * n_feat, 3, 1, 1, bias=bias))
-                m.append(nn.PixelShuffle(2))
-        elif scale == 3:
-            m.append(nn.Conv2d(n_feat, 9 * n_feat, 3, 1, 1, bias=bias))
-            m.append(nn.PixelShuffle(3))
-        else:
-            raise NotImplementedError
-
-        super(Upsampler, self).__init__(*m)
 
 ##########################################################################
 ##---------- Multi-Scale Resiudal Block (MRB) ----------
@@ -300,21 +285,12 @@ class MIRNet_v2(nn.Module):
         self.body = nn.Sequential(*modules_body)
         self.conv_out = nn.Conv2d(n_feat, out_channels, kernel_size=3, padding=1, bias=bias)
         
-        if self.task == 'super_resolution':
-            self.upsample = Upsampler(n_feat, scale, bias=bias)
-
 
     def forward(self, inp_img):
         shallow_feats = self.conv_in(inp_img)
         deep_feats = self.body(shallow_feats)
 
-        if self.task == 'super_resolution':
-            deep_feats += shallow_feats
-            deep_feats = self.upsample(deep_feats)
-            out_img = self.conv_out(deep_feats)
-            return out_img
-
-        elif self.task == 'defocus_deblurring':
+        if self.task == 'defocus_deblurring':
             deep_feats += shallow_feats
             out_img = self.conv_out(deep_feats)
 
