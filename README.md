@@ -68,7 +68,7 @@ Training and Testing instructions for Real Denoising, Defocus Deblurring, Super-
     <th align="left">Task</th>
     <th align="center">Training Instructions</th>
     <th align="center">Testing Instructions</th>
-    <th align="center">Restormer's Visual Results</th>
+    <th align="center">MIRNetv2's Visual Results</th>
   </tr>
   <tr>
     <td align="left">Real Denoising</td>
