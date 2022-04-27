@@ -8,7 +8,7 @@
 [Syed Waqas Zamir](https://scholar.google.es/citations?user=WNGPkVQAAAAJ&hl=en), [Aditya Arora](https://adityac8.github.io/), [Salman Khan](https://salman-h-khan.github.io/), [Munawar Hayat](https://scholar.google.com/citations?user=Mx8MbWYAAAAJ&hl=en), [Fahad Shahbaz Khan](https://scholar.google.es/citations?user=zvaeYnUAAAAJ&hl=en), [Ming-Hsuan Yang](https://scholar.google.com/citations?user=p9-ohHsAAAAJ&hl=en), and [Ling Shao](https://scholar.google.com/citations?user=z84rLjoAAAAJ&hl=en)
 
 [![paper](https://img.shields.io/badge/arXiv-Paper-<COLOR>.svg)](https://www.waqaszamir.com/publication/zamir-2022-mirnetv2/)
-
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1HN9Sd8UEqB1k_O8RpdRLL8ZUKcxh5LP8?usp=sharing)
 
 #### News
 - **April 27, 2022:** Codes and pre-trained models are released!
@@ -46,7 +46,7 @@ See [INSTALL.md](INSTALL.md) for the installation of dependencies required to ru
 
 ## Demo
 
-To test the pre-trained MIRNet_v2 models of Real Denoising, Dual-Pixel Defocus Deblurring, Super-Resolution,  and Image Enhancement on your own images, run
+To test the pre-trained MIRNet_v2 models of Real Denoising, Dual-Pixel Defocus Deblurring, Super-Resolution,  and Image Enhancement on your own images,you can either use Google Colab [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1HN9Sd8UEqB1k_O8RpdRLL8ZUKcxh5LP8?usp=sharing), or command line as following
 ```
 python demo.py --task Task_Name --input_dir path_to_images --result_dir save_images_here
 ```
