@@ -1,0 +1,1 @@
+pre-trained super-resolution models are available [here](https://github.com/swz30/MIRNetv2/releases/tag/v1.0.0)

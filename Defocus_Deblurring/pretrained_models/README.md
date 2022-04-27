@@ -1,0 +1,1 @@
+pre-trained defocus deblurring model is available [here](https://github.com/swz30/MIRNetv2/releases/download/v1.0.0/dual_pixel_defocus_deblurring.pth)

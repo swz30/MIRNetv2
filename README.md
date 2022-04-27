@@ -102,27 +102,28 @@ Experiments are performed for different image processing tasks.
 <details>
 <summary><strong>Real Denoising</strong> (click to expand) </summary>
 <p align="center">
-<img src = "https://imgur.com/wfOU0tZ.png" width="400"> 
+<img src = "https://imgur.com/jV5K8Ji.png" width="450"> 
 </p>
 </details>
 
 <details>
 <summary><strong>Defocus Deblurring</strong> (click to expand) </summary>
 
-<img src = "https://imgur.com/VSsDzPY.png"> 
+<img src = "https://imgur.com/y5itTxY.png"> 
 </details>
 
 
 <details>
 <summary><strong>Super-Resolution</strong> (click to expand) </summary>
 <p align="center">
-<img src = "https://imgur.com/MXcfPzg.png" width="400"> 
-</details>
+<img src = "https://imgur.com/u1H237x.png" width="450"> 
 </p>
+</details>
+
 <details>
 <summary><strong>Image Enhancement</strong> (click to expand) </summary>
-
-<img src = "https://imgur.com/uwzF8nf.png">
+    
+<img src = "https://imgur.com/2VOIXNP.png">
 </details>
 
 ## Citation
