@@ -46,17 +46,25 @@ def save_img(filepath, img):
 
 def get_weights_and_parameters(task, parameters):
     if task == 'real_denoising':
-        weights = os.path.join('real_denoising', 'pretrained_models', 'real_denoising.pth')
+        weights = os.path.join('Real_Denoising', 'pretrained_models', 'real_denoising.pth')
+        if not os.path.exists(weights):
+            os.system('wget https://github.com/swz30/MIRNetv2/releases/download/v1.0.0/real_denoising.pth -P Real_Denoising/pretrained_models/')
 
     elif task == 'super_resolution':
-        weights = os.path.join('super_resolution', 'pretrained_models', 'sr_x4.pth')
+        weights = os.path.join('Super_Resolution', 'pretrained_models', 'sr_x4.pth')
         parameters['scale'] =  4
+        if not os.path.exists(weights):
+            os.system('wget https://github.com/swz30/MIRNetv2/releases/download/v1.0.0/sr_x4.pth -P Super_Resolution/pretrained_models/')
 
     elif task == 'contrast_enhancement':
-        weights = os.path.join('image_enhancement', 'pretrained_models', 'model_fivek.pth')
-    
+        weights = os.path.join('Enhancement', 'pretrained_models', 'enhancement_fivek.pth')
+        if not os.path.exists(weights):
+            os.system('wget https://github.com/swz30/MIRNetv2/releases/download/v1.0.0/enhancement_fivek.pth -P Enhancement/pretrained_models/')
+
     elif task == 'lowlight_enhancement':
-        weights = os.path.join('image_enhancement', 'pretrained_models', 'model_lol.pth')
+        weights = os.path.join('Enhancement', 'pretrained_models', 'enhancement_lol.pth')
+        if not os.path.exists(weights):
+            os.system('wget https://github.com/swz30/MIRNetv2/releases/download/v1.0.0/enhancement_lol.pth -P Enhancement/pretrained_models/')
 
     return weights, parameters
 
@@ -94,7 +102,10 @@ parameters = {
     'task': task
     }
 
+
+
 weights, parameters = get_weights_and_parameters(task, parameters)
+
 
 load_arch = run_path(os.path.join('basicsr', 'models', 'archs', 'mirnet_v2_arch.py'))
 model = load_arch['MIRNet_v2'](**parameters)
@@ -134,7 +145,7 @@ with torch.inference_mode():
             # test the image tile by tile
             b, c, h, w = input_.shape
             tile = min(args.tile, h, w)
-            assert tile % 8 == 0, "tile size should be multiple of 8"
+            assert tile % 4 == 0, "tile size should be multiple of 4"
             tile_overlap = args.tile_overlap
 
             stride = tile - tile_overlap
