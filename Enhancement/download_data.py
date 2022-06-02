@@ -34,7 +34,7 @@ for data in args.data.split('-'):
         os.remove('Datasets/train.zip')
     
     if data == 'val':
-        if dataset == 'FiveK'
+        if dataset == 'FiveK':
             print('FiveK validation data used during training!')
             # gdown.download(id=FiveK_val, output='Datasets/val.zip', quiet=False)
             os.system(f'gdrive download {FiveK_val} --path Datasets/')
