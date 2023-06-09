@@ -76,5 +76,21 @@ hr_files = natsorted(glob(os.path.join(src, 'HR', '*.png')) + glob(os.path.join(
 
 files = [(i, j) for i, j in zip(lr_files, hr_files)]
 
-Parallel(n_jobs=num_cores)(delayed(train_files)(file_) for file_ in tqdm(files))
+from multiprocessing import Pool, cpu_count
+
+# ...
+
+# Define the number of worker processes
+num_workers = min(num_cores, cpu_count())
+
+# Create a multiprocessing pool
+pool = Pool(num_workers)
+
+# Apply the train_files function to each file using the multiprocessing pool
+pool.map(train_files, tqdm(files))
+
+# Close the multiprocessing pool
+pool.close()
+pool.join()
+
 
