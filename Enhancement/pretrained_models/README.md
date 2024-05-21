@@ -1,1 +1,1 @@
-pre-trained deblurring model is available [here](https://drive.google.com/drive/folders/1czMyfRTQDX3j3ErByYeZ1PM4GVLbJeGK?usp=sharing)
+pre-trained deblurring model is available [here](https://github.com/swz30/MIRNetv2/releases/tag/v1.0.0)
